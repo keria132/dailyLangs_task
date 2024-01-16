@@ -15,7 +15,7 @@ function sync(cd){
 	browserSync.init({
 
 		server: {
-			baseDir: './src/'
+			baseDir: './'
 		},
 		port: 1030
     })
@@ -64,7 +64,7 @@ function javascript(cd){
 
 //Watch for files changes
 function watchFiles(){
-	gulp.watch('src/*.html', function browserReload(done) {
+	gulp.watch('./*.html', function browserReload(done) {
         browserSync.reload();
         done();
     });
