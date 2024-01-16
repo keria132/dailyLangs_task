@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily langs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+
+    <link href="./css/styles.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header container">
+
+        <img class="header__logo" src="./assets/logo.svg"/>
+        <nav class="navigation">
+            <ul class="navigation__menu">
+                <li>Курсы</li>
+                <li>Статьи</li>
+                <li>Вопросы</li>
+                <li>
+                    <img src="./assets/search.svg" alt="searchIcon">
+                </li>
+            </ul>
+            <img class="navigation__profile" src="./assets/profilePicture.svg"/>
+            <div class="navigation__lang">
+                RU
+                <img src="./assets/downBlack.svg" alt="downArrow">
+            </div>
+            <div class="navigation__burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+
+    </header>
+    
+    <main class="main container">
+
+        <img class="main__star" src="./assets/star.svg" alt="starIcon">
+        <img class="main__ellipse" src="./assets/ellipse.svg" alt="starIcon">
+        <img class="main__lines" src="./assets/lines.svg" alt="starIcon">
+
+        <section class="mainSettings">
+            <div class="mainSettings__lang">
+                <p>Язык</p>
+                <img src="./assets/down.svg" alt="arrowDown">
+            </div>
+            <div class="mainSettings__settings">
+                <img src="./assets/settingsIcon.svg">
+            </div>
+        
+            <div class="mainSettings__params">
+
+                <p>Продолжительность</p>
+
+                <label for="time">От 1 до 6 месяцев</label>
+                <input class="mainSettings__params-range" type="range" id="time" name="time" min="0" max="6" />
+                
+                <p>Сложность</p>
+
+                <form class="mainSettings__params-levels">
+                    <input type="radio" id="all" name="levels" value="">
+                    <label for="all">Для всех</label><br>
+                    <input type="radio" id="beginner" name="levels" value="">
+                    <label for="beginner">Для начинающих</label><br>
+                    <input type="radio" id="advanced" name="levels" value="">
+                    <label for="advanced">Продвинутый уровень</label>
+                </form>
+
+                <p>Навыки</p>
+
+                <form class="mainSettings__params-skills">
+                    <input type="checkbox" id="skill1" name="skills" value="">
+                    <label for="skill1">Грамматика</label><br>
+                    <input type="checkbox" id="skill2" name="skills" value="">
+                    <label for="skill2">Лексика</label><br>
+                    <input type="checkbox" id="skill3" name="skills" value="">
+                    <label for="skill3">Синтаксис</label>
+                    <input type="checkbox" id="skill4" name="skills" value="">
+                    <label for="skill4">Фонетика</label>
+                    <input type="checkbox" id="skill5" name="skills" value="">
+                    <label for="skill5">Пунктуация</label>
+              </form>
+
+            </div>
+        
+        </section>
+
+        <section class="courses">
+
+            <h1 class="courses__heading">Курсы <span class="courses__heading_styled">английского языка</span></h1>
+            
+            <div class="course">
+                <p class="course__name">Английский шаг за шагом</p>
+                <p class="course__object">Базовый уровень</p>
+                <img class="course__teacher" src="./assets/girl1.svg" alt="girlPicture">
+                <img class="course__flag" src="./assets/english-flag.svg" alt="englishFlag">
+                <div class="course__description">
+                    <div class="course__teacher-name">Полина коваленко</div>
+                    <div class="course__price">
+                        <strong class="course__price-actual">2940₽</strong>
+                        <sub class="course__price-discount">-51%</sub>
+                        <s class="course__price-previous"><span>6000₽</span></s>
+                    </div>
+                    <div class="course__details">
+                        <a>Подробнее</a>
+                        <img src="./assets/arrow.svg" alt="arrowIcon">
+                    </div>
+                </div>
+                <img class="course__backgroundIcon" src="./assets/A-Z.svg" alt="backgroundIcon">
+            </div>
+    
+            <div class="course">
+                <p class="course__name">Английский шаг за шагом</p>
+                <p class="course__object">Базовый уровень</p>
+                <img class="course__teacher" src="./assets/girl2.svg" alt="girlPicture">
+                <img class="course__flag" src="./assets/english-flag.svg" alt="englishFlag">
+                <div class="course__description">
+                    <div class="course__teacher-name">Полина коваленко</div>
+                    <div class="course__price">
+                        <strong class="course__price-actual">2940₽</strong>
+                        <sub class="course__price-discount">-51%</sub>
+                        <s class="course__price-previous"><span>6000₽</span></s>
+                    </div>
+                    <div class="course__details">
+                        <a>Подробнее</a>
+                        <img src="./assets/arrow.svg" alt="arrowIcon">
+                    </div>
+                </div>
+                <img class="course__backgroundIcon" src="./assets/ae.svg" alt="backgroundIcon">
+            </div>
+    
+            <div class="course">
+                <p class="course__name">Английский шаг за шагом</p>
+                <p class="course__object">Базовый уровень</p>
+                <img class="course__teacher" src="./assets/girl1.svg" alt="girlPicture">
+                <img class="course__flag" src="./assets/english-flag.svg" alt="englishFlag">
+                <div class="course__description">
+                    <div class="course__teacher-name">Полина коваленко</div>
+                    <div class="course__price">
+                        <strong class="course__price-actual">2940₽</strong>
+                        <sub class="course__price-discount">-51%</sub>
+                        <s class="course__price-previous"><span>6000₽</span></s>
+                    </div>
+                    <div class="course__details">
+                        <a>Подробнее</a>
+                        <img src="./assets/arrow.svg" alt="arrowIcon">
+                    </div>
+                </div>
+                <img class="course__backgroundIcon" src="./assets/A-Z.svg" alt="backgroundIcon">
+            </div>
+    
+            <div class="course">
+                <p class="course__name">Английский шаг за шагом</p>
+                <p class="course__object">Базовый уровень</p>
+                <img class="course__teacher" src="./assets/girl2.svg" alt="girlPicture">
+                <img class="course__flag" src="./assets/english-flag.svg" alt="englishFlag">
+                <div class="course__description">
+                    <div class="course__teacher-name">Полина коваленко</div>
+                    <div class="course__price">
+                        <strong class="course__price-actual">2940₽</strong>
+                        <sub class="course__price-discount">-51%</sub>
+                        <s class="course__price-previous"><span>6000₽</span></s>
+                    </div>
+                    <div class="course__details">
+                        <a>Подробнее</a>
+                        <img src="./assets/arrow.svg" alt="arrowIcon">
+                    </div>
+                </div>
+                <img class="course__backgroundIcon" src="./assets/ae.svg" alt="backgroundIcon">
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="">
+        <section class="footer container">
+            <div class="footer__links">
+                <a href="">Политика конфиденциальности</a>
+                <a href="">Условия пользования</a>
+            </div>
+    
+            <img class="footer__logo" src="./assets/logoFooter.svg">
+    
+            <p class="footer__label">© DailyLangs | 2023. Все права защищены</p>
+        </section>
+    </footer>
+    <script src="./js/min/script.min.js"></script>
+</body>
+</html>

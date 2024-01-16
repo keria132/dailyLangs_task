@@ -1,0 +1,558 @@
+//Grid using flex and SASS (rem and % as units)
+
+//CSS reset minimal
+@use "css-reset";
+
+$font-stack: "Mulish", sans-serif;
+$font-small: 14px;
+$font-medium: 18px;
+$primary-violet: #C05AFF;
+$primary-pink: #FF50BA;
+$secondary-yellow: #FFFD50;
+$secondary-lime: #C9FF50;
+
+@mixin container(){
+    max-width: 393px;
+    margin: auto;
+    padding: 2rem 0.8rem 1rem 0.8rem;
+
+    @media(min-width: 1400px){
+        max-width: 1400px;
+        padding: 2rem 7rem 1rem 7rem;
+    }
+}
+
+@mixin customInputRadios($customColor){
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid $customColor;
+}
+
+html{
+    font-family: $font-stack;
+}
+
+body{
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+//////////  HEADER SECTION  /////////////
+
+.header{
+
+    @include container;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 2.5rem;
+    position: relative;
+
+    &__logo{
+        width: 8rem;
+    }
+
+    .navigation{
+        display: flex;
+        flex-flow: row nowrap;
+        column-gap: 1rem;
+        justify-content: flex-end;
+        align-items: center;
+        min-width: 50%;
+        margin-left: auto;
+
+        &__menu{
+            display: none;
+            overflow: hidden;
+            font-size: $font-medium;
+            font-weight: 500;
+            column-gap: 4rem;
+            align-items: center;
+            li{
+                height: fit-content;
+            }
+        }
+
+        &__profile{
+            width: 2rem;
+        }
+
+        &__lang{
+            display: none;
+        }
+
+        &__burger{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            height: 1.2rem;
+            width: 2rem;
+            cursor: pointer;
+            div{
+                height: 2px;
+                width: 100%;
+                background-color: $primary-violet;
+                border-radius: 2rem;
+            }
+        }
+    }
+}
+
+///////////  MAIN SECTION STYLES   ////////////
+
+.main{
+
+    @include container;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+
+    &__star{
+        position: absolute;
+        right: 0rem;
+        width: 5rem;
+    }
+
+    &__ellipse{
+        display: none;
+    }
+
+    &__lines{
+        display: none;
+    }
+
+    .mainSettings{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        row-gap: 1.5rem;
+        position: relative;
+        width: 100%;
+
+        &__params{
+            display: none;
+            flex-flow: column nowrap;
+            
+            p{
+                font-weight: 600;
+                font-size: $font-medium;
+                margin: 2rem 0;
+            }
+
+            &-range{
+                margin-top: 1rem;
+                appearance: none;
+                background-color: transparent;
+                border-radius: 15px;
+
+                &::-webkit-slider-runnable-track{
+                    background: $primary-violet;
+                    height: 2px;
+                    border-radius: 0.5rem;
+                }
+                &::-moz-range-track{
+                    background: $primary-violet;
+                    height: 2px;
+                    border-radius: 15px;
+                }
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    margin-top: -0.4rem;
+                    background-color: $primary-violet;
+                    height: 1rem;
+                    width: 1rem;
+                    border-radius: 4rem;
+                 }
+            }
+
+            &-levels{
+
+                input{
+                    margin: 0.5rem 0;
+
+                    &::after {
+                        @include customInputRadios($customColor: $primary-violet);
+                    }
+
+                    &:checked:after {
+                        @include customInputRadios($customColor: $primary-violet);
+                        background-color: $primary-violet;
+                    }
+                }
+                label{
+                    margin-left: 0.3rem;
+                }
+            }
+
+            &-skills{
+                display: flex;
+                flex-flow: row wrap;
+                row-gap: 0.5rem;
+                input{
+                    appearance: none;
+                    -webkit-appearance: none;
+                    align-content: center;
+                    justify-content: center;
+                    padding: 0.1rem;
+                    border: 1px solid $primary-violet;
+                    width: 1rem;
+                    height: 1rem;
+                    border-radius: 2px;
+
+                    &:checked{
+                        background-color: $primary-violet;
+                    }
+                }
+
+                label{
+                    display: inline-block;
+                    min-width: 85%;
+                    margin-left: 0.3rem;
+                }
+            }
+        }
+
+        &__lang{
+            background-color: $primary-violet;
+            border-radius: 2rem;
+            padding: 0.7rem 3rem;
+            color: white;
+            font-size: $font-small;
+            margin-right: 0.5rem;
+            p{
+                width: fit-content;
+                display: inline-block;
+                margin-right: 0.5rem;
+            }
+            img{
+                width: 0.7rem;
+            }
+        }
+
+        &__settings{
+            display: flex;
+            background-color: $primary-violet;
+            padding: 0.7rem;
+            border-radius: 5rem;
+        }
+
+    }
+
+    .courses{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 1rem;
+
+        &__heading{
+            font-weight: 800;
+            font-size: 32px;
+            width: 100%;
+            margin: 1rem 0 2rem 0;
+            &_styled{
+                display: inline-block;
+                background-color: $secondary-lime;
+                padding: 0.5rem 1rem;
+                border-radius: 2rem;
+                margin-top: 0.1em;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .course{
+            background-color: $primary-violet;
+            padding: 1.5rem 1.3rem;
+            width: 100%;
+            color: white;
+            border-radius: 1.7rem;
+            position: relative;
+            display: flex;
+            flex-flow: row wrap;
+            font-weight: 800;
+    
+            &__name, &__object{
+                font-size: $font-medium;
+                width: 100%;
+                z-index: 1;
+            }
+
+            &__object{
+                color: $secondary-yellow;
+            }
+
+            &__teacher{
+                position: relative;
+                bottom: -1.5rem;
+                left: -1.3rem;
+                width: 60%;
+                z-index: 1;
+            }
+
+            &__flag{
+                position: absolute;
+                bottom: 1rem;
+                left: 35%;
+                width: 15%;
+                z-index: 1;
+            }
+            
+            &__description{
+                position: absolute;
+                top: 35%;
+                right: 1.3rem;
+                width: 60%;
+                display: flex;
+                flex-flow: row wrap;
+                z-index: 1;
+            }
+    
+            &__teacher-name{
+                background-color: $secondary-lime;
+                color: black;
+                padding: 0.4rem 1.5rem;
+                border-radius: 2rem;
+                font-size: 12px;
+                font-family: "Montserrat", sans-serif;
+                font-weight: 600;
+                width: fit-content;
+                margin-left: 2rem;
+                position: relative;
+    
+                &::before{
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    width: 1rem;
+                    height: 1rem;
+                    left: -0.6rem;
+                    bottom: -0.8rem;
+                    background-image: url("../assets/polygon.svg");
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+            }
+    
+            &__price{
+                position: relative;
+                &-actual{
+                    font-weight: 800;
+                    font-size: 36px;
+                    margin-left: 4rem;
+                    margin-top: 1rem;
+                    display: inline-block;
+                }
+                &-discount{
+                    font-size: 8px;
+                    font-weight: 600;
+                    padding: 0.2rem 0.5rem;
+                    background-color: $primary-pink;
+                    border-radius: 1rem;
+                }
+                &-previous{
+                    margin-left: 55%;
+                    font-size: $font-medium;
+                    color: $primary-pink;
+                    span{
+                        color: white;
+                    }
+                }
+            }
+    
+            &__details{
+                display: flex;
+                flex-flow: row nowrap;
+                column-gap: 0.5rem;
+                font-size: $font-small;
+                font-weight: 500;
+                margin-top: 4rem;
+                margin-left: 7rem;
+            }
+
+            &__backgroundIcon{
+                position: absolute;
+                top: 4rem;
+                right: 2rem;
+                z-index: 0;
+            }
+            
+        }
+
+
+    }
+}
+
+///////////     FOOTER SECTION STYLES   ///////////////
+
+footer{
+    background-color: $primary-violet;
+}
+
+.footer{
+
+    @include container;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    row-gap: 1.5rem;
+    background-color: $primary-violet;
+    color: white;
+    padding-top: 1rem;
+    font-size: $font-small;
+    margin-top: 3rem;
+    &__links{
+        display: flex;
+        flex-flow: column nowrap;
+        row-gap: 1rem;
+        width: 50%;
+        
+    }
+    &__logo{
+        width: 8rem;
+    }
+    &__label{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/////////   DESKTOP BREAKPOINT STYLES   ///////////////
+
+@media(min-width: 1400px){
+    .header{
+        &__logo{
+            width: 14rem;
+        }
+        .navigation{
+            width: 70%;
+            &__menu{
+                display: flex;
+            }
+            &__profile{
+                width: 3rem;
+            }
+            &__burger{
+                display: none;
+            }
+            &__lang{
+                display: flex;
+                column-gap: 0.5rem;
+                font-weight: 600;
+                font-size: $font-medium;
+            }
+
+        }
+        
+    }
+
+    .main{
+
+        &__star{
+            width: 8rem;
+            right: 2rem;
+            bottom: 1rem;
+        }
+
+        &__ellipse{
+            position: absolute;
+            display: block;
+            right: -7rem;
+        }
+
+        &__lines{
+            position: absolute;
+            display: block;
+            left: 2rem;
+            bottom: -4rem;
+        }
+
+        .mainSettings{
+            width: 20%;
+            margin-top: 1rem;
+            height: fit-content;
+            &__lang{
+                font-size: $font-medium;
+                padding: 0.8rem 4rem;
+            }
+            &__settings{
+                display: none;
+            }
+            &__params{
+                display: flex;
+            }
+            
+        }
+
+        .courses{
+            width: 75%;
+            justify-content: space-between;
+            row-gap: 1.5rem;
+            &__heading{
+                font-size: 48px;
+                margin-top: 0;
+                height: fit-content;
+                &_styled{
+                    width: fit-content;
+                    padding: 0.3rem 1rem 0.7rem;
+                    border-radius: 3rem;
+                }
+            }
+
+            .course{
+                width: 47%;
+                border-radius: 2rem;
+                &__name, &__object{
+                    font-size: 24px;
+                }
+                &__teacher-name{
+                    font-size: $font-small;
+                }
+                &__price{
+                    &-actual{
+                        font-size: 40px;
+                    }
+                    &-discount{
+                        font-size: 10px;
+                    }
+                    &-previous{
+                        font-size: 20px;
+                    }
+                }
+                &__details{
+                    font-size: $font-medium;
+                }
+            }
+        }
+    }
+
+    footer{
+        margin-top: 8rem;
+    }
+
+    .footer{
+        font-size: $font-medium;
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+        row-gap: 4rem;
+
+        &__logo{
+            width: 14rem;
+        }
+    }
+}
